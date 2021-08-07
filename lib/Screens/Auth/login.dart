@@ -1,6 +1,7 @@
 import 'package:blogging_app/Screens/Auth/Blog/home.dart';
 import 'package:blogging_app/Screens/Auth/forgotPassword.dart';
 import 'package:blogging_app/Screens/signup.dart';
+import 'package:blogging_app/constants.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter/services.dart';
 import 'package:hexcolor/hexcolor.dart';
@@ -13,21 +14,24 @@ class LoginPage extends StatefulWidget {
 class _LoginPageState extends State<LoginPage> {
   final _formKey = GlobalKey<FormState>();
 
+  TextEditingController _phone = TextEditingController();
+  TextEditingController _password = TextEditingController();
+
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      resizeToAvoidBottomInset: false,
-      backgroundColor: Hexcolor("#1F1B24"),
+      resizeToAvoidBottomInset: true,
+      backgroundColor: bgColor,
       appBar: AppBar(
         elevation: 0,
-        backgroundColor: Hexcolor("#1F1B24"),
+        backgroundColor: bgColor,
         leading: IconButton(
           onPressed: () {
             Navigator.pop(context);
           },
           icon: Icon(Icons.arrow_back_ios),
           iconSize: 20,
-          color: Colors.grey[400],
+          color: primaryHeadingColor,
         ),
       ),
       body: Container(
@@ -52,18 +56,19 @@ class _LoginPageState extends State<LoginPage> {
                         style: TextStyle(
                             fontSize: 30,
                             fontWeight: FontWeight.bold,
-                            color: Colors.grey[400]),
+                            color: primaryHeadingColor),
                       ),
                       SizedBox(
                         height: 20,
                       ),
                       Text(
                         "Login to your account",
-                        style: TextStyle(fontSize: 15, color: Colors.grey[700]),
+                        style: TextStyle(fontSize: 15, color: secondaryHeadingColor),
                       ),
                       Container(
                         padding: EdgeInsets.fromLTRB(20, 50, 20, 10),
                         child: TextFormField(
+                          controller: _phone,
                           // onTap: () {
                           //   FocusScopeNode currentFocus =
                           //       FocusScope.of(context);
@@ -84,23 +89,24 @@ class _LoginPageState extends State<LoginPage> {
                           inputFormatters: [
                             LengthLimitingTextInputFormatter(10)
                           ],
-                          style: TextStyle(color: Colors.grey[400]),
+                          style: TextStyle(color: primaryHeadingColor),
                           decoration: InputDecoration(
-                            helperStyle: TextStyle(color: Colors.grey[400]),
+                            helperStyle: TextStyle(color: primaryHeadingColor),
                             enabledBorder: OutlineInputBorder(
                                 borderSide:
-                                    BorderSide(color: Colors.grey[400])),
+                                    BorderSide(color: primaryHeadingColor)),
                             border: OutlineInputBorder(
                                 borderSide:
-                                    BorderSide(color: Colors.grey[400])),
+                                    BorderSide(color: primaryHeadingColor)),
                             labelText: 'Phone Number',
-                            labelStyle: TextStyle(color: Colors.grey[400]),
+                            labelStyle: TextStyle(color: primaryHeadingColor),
                           ),
                         ),
                       ),
                       Container(
                         padding: EdgeInsets.fromLTRB(20, 20, 20, 10),
                         child: TextFormField(
+                          controller: _password,
                           validator: (value) {
                             if (value.isEmpty) {
                               return "Password can't be empty";
@@ -109,18 +115,18 @@ class _LoginPageState extends State<LoginPage> {
                             }
                             return null;
                           },
-                          style: TextStyle(color: Colors.grey[400]),
+                          style: TextStyle(color: primaryHeadingColor),
                           obscureText: true,
                           decoration: InputDecoration(
-                            helperStyle: TextStyle(color: Colors.grey[400]),
+                            helperStyle: TextStyle(color: primaryHeadingColor),
                             enabledBorder: OutlineInputBorder(
                                 borderSide:
-                                    BorderSide(color: Colors.grey[400])),
+                                    BorderSide(color: primaryHeadingColor)),
                             border: OutlineInputBorder(
                                 borderSide:
-                                    BorderSide(color: Colors.grey[400])),
+                                    BorderSide(color: primaryHeadingColor)),
                             labelText: 'Password',
-                            labelStyle: TextStyle(color: Colors.grey[400]),
+                            labelStyle: TextStyle(color: primaryHeadingColor),
                           ),
                         ),
                       ),
@@ -147,9 +153,9 @@ class _LoginPageState extends State<LoginPage> {
                               Navigator.push(
                                   context,
                                   MaterialPageRoute(
-                                      builder: (context) => HomePage()));
+                                      builder: (context) => NavigationBar()));
                           },
-                          color: Hexcolor("#DC4170"),
+                          color: btnColor,
                           shape: RoundedRectangleBorder(
                               borderRadius: BorderRadius.circular(5)),
                           child: Text(
@@ -166,10 +172,11 @@ class _LoginPageState extends State<LoginPage> {
                   Row(
                     mainAxisAlignment: MainAxisAlignment.center,
                     children: <Widget>[
-                      Padding(padding: EdgeInsets.fromLTRB(0, 30, 0, 200)),
+                      // Padding(padding: EdgeInsets.fromLTRB(0, 30, 0, 200)),
+                      SizedBox(height: 200),
                       Text(
                         "Don't have an account?",
-                        style: TextStyle(color: Colors.grey[700]),
+                        style: TextStyle(color: secondaryHeadingColor),
                       ),
                       GestureDetector(
                         onTap: () {
@@ -183,7 +190,7 @@ class _LoginPageState extends State<LoginPage> {
                           style: TextStyle(
                             fontWeight: FontWeight.bold,
                             fontSize: 18,
-                            color: Hexcolor("#DC4170"),
+                            color: btnColor,
                           ),
                         ),
                       )

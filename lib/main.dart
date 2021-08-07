@@ -1,5 +1,6 @@
 import 'package:blogging_app/Screens/Auth/login.dart';
 import 'package:blogging_app/Screens/signup.dart';
+import 'package:blogging_app/constants.dart';
 import 'package:flutter/material.dart';
 import 'package:hexcolor/hexcolor.dart';
 
@@ -18,7 +19,7 @@ class _WelcomePageState extends State<WelcomePage> {
     return Scaffold(
       body: SafeArea(
           child: Container(
-        color: Hexcolor("#1F1B24"),
+        color: bgColor,
         width: double.infinity,
         height: MediaQuery.of(context).size.height,
         padding: EdgeInsets.symmetric(horizontal: 30, vertical: 50),
@@ -31,7 +32,7 @@ class _WelcomePageState extends State<WelcomePage> {
               style: TextStyle(
                 fontWeight: FontWeight.bold,
                 fontSize: 30,
-                color: Colors.grey[400],
+                color: primaryHeadingColor,
               ),
             ),
             SizedBox(
@@ -41,7 +42,7 @@ class _WelcomePageState extends State<WelcomePage> {
               "An easy, powerful tool to share your story...",
               style: TextStyle(
                 fontSize: 15,
-                color: Colors.grey[700],
+                color: secondaryHeadingColor,
               ),
             ),
             SizedBox(
@@ -65,7 +66,7 @@ class _WelcomePageState extends State<WelcomePage> {
                       style: TextStyle(
                           fontWeight: FontWeight.w600,
                           fontSize: 18,
-                          color: Colors.grey[400]),
+                          color: primaryHeadingColor),
                     ),
                   ),
                   SizedBox(height: 20),
@@ -78,7 +79,7 @@ class _WelcomePageState extends State<WelcomePage> {
                           MaterialPageRoute(
                               builder: (context) => SignupPage()));
                     },
-                    color: Hexcolor("#DC4170"),
+                    color: btnColor,
                     shape: RoundedRectangleBorder(
                         borderRadius: BorderRadius.circular(50)),
                     child: Text(
