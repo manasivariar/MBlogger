@@ -1,5 +1,5 @@
-import 'package:blogging_app/Screens/Auth/Blog/home.dart';
 import 'package:blogging_app/Screens/Auth/forgotPassword.dart';
+import 'package:blogging_app/Screens/Blog/home.dart';
 import 'package:blogging_app/Screens/signup.dart';
 import 'package:blogging_app/constants.dart';
 import 'package:flutter/material.dart';

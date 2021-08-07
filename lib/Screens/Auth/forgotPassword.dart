@@ -81,13 +81,16 @@ class _ForgotPasswordPageState extends State<ForgotPasswordPage> {
                           return null;
                         },
                         inputFormatters: [LengthLimitingTextInputFormatter(10)],
+                        
                         style: TextStyle(color: primaryHeadingColor),
                         decoration: InputDecoration(
                           helperStyle: TextStyle(color: primaryHeadingColor),
                           enabledBorder: OutlineInputBorder(
-                              borderSide: BorderSide(color: primaryHeadingColor)),
+                              borderSide:
+                                  BorderSide(color: primaryHeadingColor)),
                           border: OutlineInputBorder(
-                              borderSide: BorderSide(color: primaryHeadingColor)),
+                              borderSide:
+                                  BorderSide(color: primaryHeadingColor)),
                           labelText: 'Phone Number',
                           labelStyle: TextStyle(color: primaryHeadingColor),
                         ),
@@ -202,7 +205,8 @@ class _ForgotPasswordPageState extends State<ForgotPasswordPage> {
                               style: TextStyle(color: primaryHeadingColor),
                               obscureText: true,
                               decoration: InputDecoration(
-                                helperStyle: TextStyle(color: primaryHeadingColor),
+                                helperStyle:
+                                    TextStyle(color: primaryHeadingColor),
                                 enabledBorder: OutlineInputBorder(
                                     borderSide:
                                         BorderSide(color: primaryHeadingColor)),
@@ -210,7 +214,8 @@ class _ForgotPasswordPageState extends State<ForgotPasswordPage> {
                                     borderSide:
                                         BorderSide(color: primaryHeadingColor)),
                                 labelText: 'Password',
-                                labelStyle: TextStyle(color: primaryHeadingColor),
+                                labelStyle:
+                                    TextStyle(color: primaryHeadingColor),
                               ),
                             ),
                           ),
@@ -229,7 +234,8 @@ class _ForgotPasswordPageState extends State<ForgotPasswordPage> {
                               style: TextStyle(color: primaryHeadingColor),
                               obscureText: true,
                               decoration: InputDecoration(
-                                helperStyle: TextStyle(color: primaryHeadingColor),
+                                helperStyle:
+                                    TextStyle(color: primaryHeadingColor),
                                 enabledBorder: OutlineInputBorder(
                                     borderSide:
                                         BorderSide(color: primaryHeadingColor)),
@@ -237,7 +243,8 @@ class _ForgotPasswordPageState extends State<ForgotPasswordPage> {
                                     borderSide:
                                         BorderSide(color: primaryHeadingColor)),
                                 labelText: 'Confirm Password',
-                                labelStyle: TextStyle(color: primaryHeadingColor),
+                                labelStyle:
+                                    TextStyle(color: primaryHeadingColor),
                               ),
                             ),
                           ),

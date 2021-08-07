@@ -1,16 +1,19 @@
+import 'package:blogging_app/Screens/Auth/homePage.dart';
+import 'package:blogging_app/Screens/Auth/profile.dart';
+import 'package:blogging_app/Screens/Blog/post.dart';
 import 'package:blogging_app/constants.dart';
 import 'package:flutter/material.dart';
 import 'package:hexcolor/hexcolor.dart';
 
-class HomePage extends StatelessWidget {
-  @override
-  Widget build(BuildContext context) {
-    return MaterialApp(
-      debugShowCheckedModeBanner: false,
-      home: NavigationBar(),
-    );
-  }
-}
+// class HomePage extends StatelessWidget {
+//   @override
+//   Widget build(BuildContext context) {
+//     return MaterialApp(
+//       debugShowCheckedModeBanner: false,
+//       home: NavigationBar(),
+//     );
+//   }
+// }
 
 class NavigationBar extends StatefulWidget {
   @override
@@ -28,28 +31,16 @@ class NavigationBarState extends State<NavigationBar> {
       appBar: AppBar(
         elevation: 0,
         backgroundColor: bgColor,
-        leading: IconButton(
-          onPressed: () {
-            Navigator.pop(context);
-          },
-          icon: Icon(Icons.arrow_back_ios),
-          iconSize: 20,
-          color: primaryHeadingColor,
-        ),
+        leading: Container(),
       ),
-      body: isHome
-          ? Container(
-              height: MediaQuery.of(context).size.height / 2,
-              child: Text("HOME"),
-            )
-          : Container(
-              height: MediaQuery.of(context).size.height / 2,
-              child: Text("Profile"),
-            ),
+      body: isHome ? HomePage() : ProfilePage(),
       floatingActionButtonLocation: FloatingActionButtonLocation.centerDocked,
       floatingActionButton: FloatingActionButton(
         backgroundColor: btnColor,
-        onPressed: () {},
+        onPressed: () {
+          Navigator.push(
+              context, MaterialPageRoute(builder: (context) => PostPage()));
+        },
         child: Icon(Icons.add),
         elevation: 2.0,
       ),
