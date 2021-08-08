@@ -13,6 +13,7 @@ class _ProfilePageState extends State<ProfilePage> {
     return Column(
       mainAxisAlignment: MainAxisAlignment.start,
       children: [
+        SizedBox(height: 50,),
         Container(
           child: Icon(
             Icons.account_circle,

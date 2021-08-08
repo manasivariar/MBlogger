@@ -3,7 +3,7 @@ import 'package:blogging_app/constants.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter/services.dart';
 
-import 'homePage.dart';
+import '../Blog/homePage.dart';
 
 class ChangePassword extends StatefulWidget {
   @override

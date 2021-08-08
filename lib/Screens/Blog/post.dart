@@ -1,4 +1,4 @@
-import 'package:blogging_app/Screens/Auth/homePage.dart';
+import 'package:blogging_app/Screens/Blog/homePage.dart';
 import 'package:blogging_app/Screens/Blog/home.dart';
 import 'package:blogging_app/constants.dart';
 import 'package:flutter/material.dart';
